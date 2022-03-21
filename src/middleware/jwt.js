@@ -4,7 +4,8 @@ const jwtCtrl = {};
 
 jwtCtrl.verifyToken = (req, res, next) => {
     // Obtenemos el token del header del request
-    const token = req.header('auth-token');
+    const authoriz = req.headers.authorization;
+    const token = authoriz.replace(/^Bearer\s+/, "");
     // Validamos si no hay token
     if(!token){
     return res.status(401).json({error: 'Acceso denegado'});

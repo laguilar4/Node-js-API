@@ -11,7 +11,7 @@ const app = express();
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 //Routes
-
+app.use("/api/test",require('./routes/test'));
 //Static Files
 
 //Starting the server
