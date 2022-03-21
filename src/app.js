@@ -1,5 +1,7 @@
 const express = require('express');
 const morgan = require('morgan');
+const bodyParser = require('body-parser');
+
 const app = express();
 //Initializations
 
@@ -7,6 +9,7 @@ const app = express();
 
 //Middlewares
 app.use(morgan('dev'));
+app.use(bodyParser.json());
 //Routes
 
 //Static Files
